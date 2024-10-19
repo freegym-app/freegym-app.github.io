@@ -326,6 +326,10 @@
           emailInput: emailInput,
         });
 
+        gtag("event", "conversion", {
+          send_to: "AW-11471593249/4oRKCLr1oN8ZEKG-it4q",
+        });
+
         fetch("https://api.freegym.com.br/waitlist-emails", {
           method: "POST",
           headers: {
