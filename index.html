@@ -92,7 +92,7 @@
       }
       .cta-button {
         padding: 10px 30px 10px 30px;
-        background-color: #ff5d5d;
+        background-color: #00b4ff;
         border-radius: 12px;
         cursor: pointer;
       }
@@ -154,6 +154,10 @@
       .input-container input:focus {
         outline-color: #00b4ff;
       }
+      .last-button-row {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
       @media (max-width: 768px) {
         .second-texts-container {
           align-items: center;
@@ -204,6 +208,10 @@
           width: 100%;
           margin-top: 20px;
           margin-bottom: 20px;
+        }
+        .last-button-row {
+          margin-top: -50px;
+          margin-bottom: 0;
         }
       }
 
@@ -357,6 +365,18 @@
             popup: "swal-popup",
           },
         });
+      }
+
+      function getApp(button) {
+        mixpanel.track("Get app", {
+          button: button,
+        });
+
+        window.open(
+          "https://play.google.com/store/apps/details?id=com.freegym",
+          "_blank",
+          "noopener,noreferrer"
+        );
       }
     </script>
 
@@ -512,10 +532,10 @@
               height="100%"
               class="mobile-image"
             />
-            <!-- <div class="cta-button">
+            <div class="cta-button" onclick="getApp('button1')">
               <span class="cta-button-title">Baixe o app</span>
-            </div> -->
-            <div class="input-container">
+            </div>
+            <!-- <div class="input-container">
               <input
                 type="email"
                 id="emailInput1"
@@ -528,7 +548,7 @@
               >
                 <div class="register-email-button-title">Cadastrar</div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-md-6">
@@ -546,7 +566,7 @@
           <span class="title">Como funciona? </span>
         </div>
       </div>
-      <div class="row" style="margin-bottom: 50px">
+      <div class="row">
         <div class="col-md-12 text-center" style="margin-bottom: 50px">
           <p
             style="
@@ -583,7 +603,7 @@
           </p>
         </div>
 
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <div class="input-container">
             <input
               type="email"
@@ -596,6 +616,16 @@
               onclick="registerEmail('emailInput2')"
             >
               <div class="register-email-button-title">Cadastrar</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="row last-button-row">
+        <div class="col-md-12 mx-auto">
+          <div style="display: flex; justify-content: center">
+            <div class="cta-button" onclick="getApp('button2')">
+              <span class="cta-button-title">Baixe o app</span>
             </div>
           </div>
         </div>
